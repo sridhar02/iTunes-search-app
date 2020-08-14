@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { create } from "apisauce";
 
-import "./app.css";
+// import "./app.css";
 import ItemsList from "./components/ItemsList";
 import SearchInput from "./components/Search.js";
 
@@ -14,16 +14,14 @@ function App() {
 
   function onItemSearch(value) {
     api
-      .get(
-        `https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=${value}`
-      )
+      .get(`${process.env.REACT_APP_BACKEND_API}/search?term=${value}`)
       .then((response) => setSearchResults(response.data.results))
       .catch((error) => alert(error));
   }
   return (
     <>
-          <SearchInput onItemSearch={onItemSearch} />
-          <ItemsList searchResults={searchResults} />
+      <SearchInput onItemSearch={onItemSearch} />
+      <ItemsList searchResults={searchResults} />
     </>
   );
 }

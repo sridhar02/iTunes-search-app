@@ -1,13 +1,9 @@
-import React, { useState } from "react";
-
+import React from "react";
 import { Input } from "antd";
+
 const { Search } = Input;
 
-
-
-export default function SearchInput({onItemSearch}) {
-
-
+export default function SearchInput({ onItemSearch }) {
   return (
     <>
       <div style={{ margin: "30px 20px" }}>
