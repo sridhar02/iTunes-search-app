@@ -20,6 +20,7 @@ function App() {
   }
   return (
     <>
+      <h2 style={{textAlign: 'center'}}>ITunes Search</h2>
       <SearchInput onItemSearch={onItemSearch} />
       <ItemsList searchResults={searchResults} />
     </>
